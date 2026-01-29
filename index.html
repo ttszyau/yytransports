@@ -948,9 +948,7 @@
         async function findStopId(route, direction, stationNamePattern) {
             try {
                 // Get route-stop data for the route
-                const proxy = 'https://api.allorigins.win/raw?url=';
-                const routeStopRes = await fetch(proxy + encodeURIComponent(`${CONFIG.KMB_BASE}/route-stop/${route}/${direction}/1`));Do the same for every fetch:                    if (!routeStopRes.ok) throw new Error('Failed to fetch route stops');
-                const routeStopData = await routeStopRes.json();
+             const routeStopRes = await fetch(`${CONFIG.KMB_BASE}/route-stop/${route}/${direction}/1`);  const routeStopData = await routeStopRes.json();
 
                 if (!routeStopData.data || routeStopData.data.length === 0) {
                     return null;
