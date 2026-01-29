@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="x-poe-datastore-behavior" content="local_only">
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:;
-        connect-src 'self' https://data.etabus.gov.hk https://rt.data.gov.hk;
-        frame-src 'self' https://www.youtube.com https://trytako.com;
-        child-src 'self';
-        manifest-src 'self';
-        worker-src 'self';
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-        font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https://i.imgur.com https://picsum.photos https://images.unsplash.com;
-        upgrade-insecure-requests;
-        block-all-mixed-content;
-    ">
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:;
+    connect-src 'self' https://data.etabus.gov.hk https://rt.data.gov.hk;
+    frame-src 'self' https://www.youtube.com https://trytako.com;
+    child-src 'self';
+    manifest-src 'self';
+    worker-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https://i.imgur.com https://picsum.photos https://images.unsplash.com;
+    upgrade-insecure-requests;
+    block-all-mixed-content;
+">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YY Transports 🦕</title>
-
-    <!-- Font imports (Fredoka) -->
-    <style type="text/css">
-        @font-face {font-family:Fredoka;font-style:normal;font-weight:400;src:url(/cf-fonts/v/fredoka/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}
-        /* ... (all other @font-face rules remain the same - keeping them out for brevity) ... */
-    </style>
-
+    <style type="text/css">@font-face {font-family:Fredoka;font-style:normal;font-weight:400;src:url(/cf-fonts/v/fredoka/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:400;src:url(/cf-fonts/v/fredoka/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:400;src:url(/cf-fonts/v/fredoka/5.0.11/hebrew/wght/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:500;src:url(/cf-fonts/v/fredoka/5.0.11/hebrew/wght/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:500;src:url(/cf-fonts/v/fredoka/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:500;src:url(/cf-fonts/v/fredoka/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:600;src:url(/cf-fonts/v/fredoka/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:600;src:url(/cf-fonts/v/fredoka/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:600;src:url(/cf-fonts/v/fredoka/5.0.11/hebrew/wght/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:700;src:url(/cf-fonts/v/fredoka/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:700;src:url(/cf-fonts/v/fredoka/5.0.11/hebrew/wght/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Fredoka;font-style:normal;font-weight:700;src:url(/cf-fonts/v/fredoka/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
     <style>
-        /* ──────────────────────────────────────────────── */
-        /* Your original CSS remains unchanged               */
-        /* Only showing key parts here for context           */
-        /* ──────────────────────────────────────────────── */
         :root {
             --primary: #4A7FC1;
             --primary-dark: #3A6BA8;
             --secondary: #B8A9C9;
+            --secondary-light: #E8E0F0;
             --accent: #6BCB77;
             --warning: #FFD93D;
             --danger: #E74C3C;
@@ -44,18 +31,540 @@
             --bus-blue: #3498DB;
             --dino-green: #2ECC71;
         }
+
         .dark {
             --primary: #5A8FD1;
+            --primary-dark: #4A7FC1;
+            --secondary: #9B8AB9;
+            --secondary-light: #4A4060;
             --bg-light: #1A1D24;
             --bg-card: #252A34;
             --text-primary: #E8E8E8;
             --text-secondary: #A0AEC0;
+            --danger: #FF6B6B;
         }
-        /* ... rest of your beautiful CSS stays exactly the same ... */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(75, 127, 193, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 169, 201, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(107, 203, 119, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Birthday Banner */
+        .birthday-banner {
+            background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 50%, #C44569 100%);
+            padding: 12px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.1); }
+        }
+
+        .birthday-banner::before,
+        .birthday-banner::after {
+            content: '🎉';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .birthday-banner::before { left: 15px; }
+        .birthday-banner::after { right: 15px; animation-delay: 0.5s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-60%) scale(1.2); }
+        }
+
+        .birthday-text {
+            color: white;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .birthday-text .age-badge {
+            background: white;
+            color: #C44569;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .birthday-text .dino-emoji {
+            font-size: 24px;
+            display: inline-block;
+            animation: dinoWalk 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes dinoWalk {
+            0% { transform: translateY(0) rotate(-5deg); }
+            100% { transform: translateY(-3px) rotate(5deg); }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--mtr-purple) 100%);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 28px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .header-dino {
+            width: 45px;
+            height: 45px;
+            animation: headBob 2s ease-in-out infinite;
+        }
+
+        @keyframes headBob {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: var(--bg-card);
+            border-radius: 16px;
+            margin: 16px;
+            padding: 6px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            background: transparent;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 127, 193, 0.4);
+        }
+
+        .nav-tab:not(.active):hover {
+            background: var(--secondary-light);
+        }
+
+        .nav-tab .icon {
+            font-size: 20px;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 0 16px 100px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Header */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0 16px;
+        }
+
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .section-icon.bus { background: linear-gradient(135deg, var(--bus-blue), #2980B9); }
+        .section-icon.mtr { background: linear-gradient(135deg, var(--mtr-purple), #8E44AD); }
+
+        .section-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Station Card */
+        .station-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .station-name {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .route-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .route-badge.bus {
+            background: rgba(52, 152, 219, 0.15);
+            color: var(--bus-blue);
+        }
+
+        .route-badge.mtr {
+            background: rgba(155, 89, 182, 0.15);
+            color: var(--mtr-purple);
+        }
+
+        /* ETA List */
+        .eta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .eta-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--bg-light);
+            border-radius: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .dark .eta-item {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .eta-item:hover {
+            transform: translateX(4px);
+        }
+
+        /* RUN Alert Style */
+        .eta-item.run-alert {
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
+            border: 2px solid var(--danger);
+            animation: runPulse 0.8s ease-in-out infinite;
+        }
+
+        .dark .eta-item.run-alert {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.3) 0%, rgba(231, 76, 60, 0.15) 100%);
+        }
+
+        @keyframes runPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(231, 76, 60, 0); }
+        }
+
+        .eta-info {
+            flex: 1;
+        }
+
+        .eta-destination {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .eta-platform {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .eta-time {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .eta-minutes-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .alarm-icon {
+            font-size: 20px;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .eta-minutes {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .eta-minutes.arriving {
+            color: var(--accent);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .eta-minutes.soon {
+            color: var(--warning);
+        }
+
+        .eta-minutes.later {
+            color: var(--text-secondary);
+        }
+
+        .eta-minutes.run {
+            color: var(--danger);
+            font-size: 28px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .eta-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .eta-label.run {
+            color: var(--danger);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        /* Loading State */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            gap: 16px;
+        }
+
+        .loading-dino {
+            width: 80px;
+            height: 80px;
+            animation: dinoRun 0.4s steps(2) infinite;
+        }
+
+        @keyframes dinoRun {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+
+        .loading-text {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--secondary-light);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Error State */
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            gap: 16px;
+        }
+
+        .error-icon {
+            font-size: 60px;
+        }
+
+        .error-text {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Refresh Button */
+        .refresh-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--mtr-purple) 100%);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(74, 127, 193, 0.5);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(74, 127, 193, 0.6);
+        }
+
+        .refresh-btn:active {
+            transform: scale(0.95);
+        }
+
+        .refresh-btn.spinning svg {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Last Updated */
+        .last-updated {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            padding: 16px;
+        }
+
+        /* Dino Decorations */
+        .dino-decor {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 50px;
+            height: 50px;
+            opacity: 0.6;
+            animation: dinoIdle 3s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        @keyframes dinoIdle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* No Data Message */
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 380px) {
+            .header h1 { font-size: 22px; }
+            .birthday-text { font-size: 14px; }
+            .nav-tab { font-size: 14px; padding: 12px 10px; }
+        }
+
+        /* SVG Dino styles */
+        .dino-svg {
+            fill: currentColor;
+        }
     </style>
 </head>
 <body>
-
     <!-- Birthday Banner -->
     <div class="birthday-banner">
         <div class="birthday-text">
@@ -69,7 +578,30 @@
     <header class="header">
         <h1>
             <svg class="header-icon" viewBox="0 0 100 100" fill="white" style="width: 50px; height: 50px; animation: headBob 2s ease-in-out infinite;">
-                <!-- Your cute car SVG remains unchanged -->
+                <!-- Car body -->
+                <rect x="10" y="45" width="80" height="30" rx="8" ry="8"></rect>
+                <!-- Car roof -->
+                <path d="M25 45 L35 25 L65 25 L75 45 Z"></path>
+                <!-- Windows -->
+                <rect x="37" y="28" width="12" height="14" rx="2" fill="rgba(0,0,0,0.3)"></rect>
+                <rect x="51" y="28" width="12" height="14" rx="2" fill="rgba(0,0,0,0.3)"></rect>
+                <!-- Wheels -->
+                <circle cx="28" cy="75" r="12" fill="#333"></circle>
+                <circle cx="28" cy="75" r="6" fill="#666"></circle>
+                <circle cx="72" cy="75" r="12" fill="#333"></circle>
+                <circle cx="72" cy="75" r="6" fill="#666"></circle>
+                <!-- Eyes on windshield -->
+                <ellipse cx="42" cy="52" rx="8" ry="10" fill="white"></ellipse>
+                <ellipse cx="58" cy="52" rx="8" ry="10" fill="white"></ellipse>
+                <circle cx="44" cy="54" r="4" fill="#333"></circle>
+                <circle cx="60" cy="54" r="4" fill="#333"></circle>
+                <circle cx="45" cy="53" r="1.5" fill="white"></circle>
+                <circle cx="61" cy="53" r="1.5" fill="white"></circle>
+                <!-- Smile -->
+                <path d="M42 62 Q50 68 58 62" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"></path>
+                <!-- Headlights -->
+                <rect x="12" y="52" width="8" height="6" rx="2" fill="#FFD93D"></rect>
+                <rect x="80" y="52" width="8" height="6" rx="2" fill="#FFD93D"></rect>
             </svg>
             YY Transports
         </h1>
@@ -91,6 +623,7 @@
     <main class="content">
         <!-- Go Work Page -->
         <div class="page active" id="page-work">
+            <!-- Bus Section -->
             <div class="section-header">
                 <div class="section-icon bus">🚌</div>
                 <div>
@@ -109,6 +642,7 @@
                 </div>
             </div>
 
+            <!-- MTR Section -->
             <div class="section-header">
                 <div class="section-icon mtr">🚇</div>
                 <div>
@@ -132,6 +666,7 @@
 
         <!-- Go Home Page -->
         <div class="page" id="page-home">
+            <!-- Bus Section -->
             <div class="section-header">
                 <div class="section-icon bus">🚌</div>
                 <div>
@@ -150,7 +685,7 @@
                 </div>
             </div>
 
-            <!-- North Point MTR -->
+            <!-- MTR North Point Section -->
             <div class="section-header">
                 <div class="section-icon mtr">🚇</div>
                 <div>
@@ -169,7 +704,7 @@
                 </div>
             </div>
 
-            <!-- Tiu Keng Leng MTR -->
+            <!-- MTR Tiu Keng Leng Section -->
             <div class="section-header">
                 <div class="section-icon mtr">🚇</div>
                 <div>
@@ -208,51 +743,107 @@
     </svg>
 
     <script>
-        // ────────────────────────────────────────────────
-        // Dark mode
-        // ────────────────────────────────────────────────
+        // Dark mode detection
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark');
         }
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            document.documentElement.classList.toggle('dark', e.matches);
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
         });
 
-        // ────────────────────────────────────────────────
-        // MTR station name mapping
-        // ────────────────────────────────────────────────
+        // MTR Station Name Mapping (Full names for all lines)
         const MTR_STATION_NAMES = {
+            // Tseung Kwan O Line
             'LHP': 'LOHAS Park 康城',
             'TIK': 'Tiu Keng Leng 調景嶺',
             'TKO': 'Tseung Kwan O 將軍澳',
             'HAH': 'Hang Hau 坑口',
             'POA': 'Po Lam 寶琳',
             'YAT': 'Yau Tong 油塘',
+
+            // Island Line
+            'KET': 'Kennedy Town 堅尼地城',
+            'HKU': 'HKU 香港大學',
+            'SYP': 'Sai Ying Pun 西營盤',
+            'SHW': 'Sheung Wan 上環',
+            'CEN': 'Central 中環',
+            'ADM': 'Admiralty 金鐘',
+            'WAC': 'Wan Chai 灣仔',
+            'CAB': 'Causeway Bay 銅鑼灣',
+            'TIH': 'Tin Hau 天后',
+            'FOH': 'Fortress Hill 炮台山',
             'NOP': 'North Point 北角',
-            // ... you can keep adding more if needed ...
+            'QUB': 'Quarry Bay 鰂魚涌',
+            'TAK': 'Tai Koo 太古',
+            'SWH': 'Sai Wan Ho 西灣河',
+            'SKW': 'Shau Kei Wan 筲箕灣',
+            'HFC': 'Heng Fa Chuen 杏花邨',
+            'CHW': 'Chai Wan 柴灣',
+
+            // Kwun Tong Line
+            'WHA': 'Whampoa 黃埔',
+            'HOM': 'Ho Man Tin 何文田',
+            'YMT': 'Yau Ma Tei 油麻地',
+            'MOK': 'Mong Kok 旺角',
+            'PRE': 'Prince Edward 太子',
+            'SKM': 'Shek Kip Mei 石硤尾',
+            'KOT': 'Kowloon Tong 九龍塘',
+            'LOF': 'Lok Fu 樂富',
+            'WTS': 'Wong Tai Sin 黃大仙',
+            'DIH': 'Diamond Hill 鑽石山',
+            'CHH': 'Choi Hung 彩虹',
+            'KOB': 'Kowloon Bay 九龍灣',
+            'NTK': 'Ngau Tau Kok 牛頭角',
+            'KWT': 'Kwun Tong 觀塘',
+            'LAT': 'Lam Tin 藍田',
+
+            // Tsuen Wan Line
+            'TSW': 'Tsuen Wan 荃灣',
+            'TWH': 'Tai Wo Hau 大窩口',
+            'KWH': 'Kwai Hing 葵興',
+            'KWF': 'Kwai Fong 葵芳',
+            'LAK': 'Lai King 荔景',
+            'MEF': 'Mei Foo 美孚',
+            'LCK': 'Lai Chi Kok 荔枝角',
+            'CSW': 'Cheung Sha Wan 長沙灣',
+            'SSP': 'Sham Shui Po 深水埗',
+            'JOR': 'Jordan 佐敦',
+            'TST': 'Tsim Sha Tsui 尖沙咀'
         };
 
+        // Get full station name
         function getStationName(code) {
             return MTR_STATION_NAMES[code] || code;
         }
 
-        // ────────────────────────────────────────────────
-        // Config & Globals
-        // ────────────────────────────────────────────────
+        // API Configuration
         const CONFIG = {
+            // KMB API endpoints
             KMB_BASE: 'https://data.etabus.gov.hk/v1/transport/kmb',
+            // MTR API endpoint
             MTR_API: 'https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php',
-            MTR_LINE_TKL: 'TKL',
-            MTR_STATION_LHP: 'LHP',
-            MTR_STATION_TIK: 'TIK',
-            MTR_STATION_NOP: 'NOP'
+
+            // Stop IDs for 690S route (these need to be fetched from route-stop data)
+            WORK_BUS_ROUTE: '690S',
+            HOME_BUS_ROUTE: '690S',
+
+            // MTR Configuration
+            MTR_LINE_TKL: 'TKL',  // Tseung Kwan O Line
+            MTR_LINE_ISL: 'ISL',  // Island Line
+            MTR_STATION_LHP: 'LHP',  // LOHAS Park
+            MTR_STATION_TIK: 'TIK',  // Tiu Keng Leng
+            MTR_STATION_NOP: 'NOP'   // North Point
         };
 
+        // Global state
         let currentPage = 'work';
+        let stopData = null;
 
-        // ────────────────────────────────────────────────
         // Navigation
-        // ────────────────────────────────────────────────
         document.querySelectorAll('.nav-tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 const page = tab.dataset.page;
@@ -262,6 +853,8 @@
 
         function switchPage(page) {
             currentPage = page;
+
+            // Update tabs
             document.querySelectorAll('.nav-tab').forEach(t => {
                 t.classList.remove('active');
                 t.setAttribute('aria-selected', 'false');
@@ -269,32 +862,39 @@
             document.querySelector(`[data-page="${page}"]`).classList.add('active');
             document.querySelector(`[data-page="${page}"]`).setAttribute('aria-selected', 'true');
 
+            // Update pages
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(`page-${page}`).classList.add('active');
 
+            // Refresh data for the new page
             refreshData();
         }
 
         // Refresh button
-        document.getElementById('refresh-btn').addEventListener('click', () => {
-            const btn = document.getElementById('refresh-btn');
-            btn.classList.add('spinning');
-            refreshData().finally(() => setTimeout(() => btn.classList.remove('spinning'), 600));
+        const refreshBtn = document.getElementById('refresh-btn');
+        refreshBtn.addEventListener('click', () => {
+            refreshBtn.classList.add('spinning');
+            refreshData().finally(() => {
+                setTimeout(() => refreshBtn.classList.remove('spinning'), 500);
+            });
         });
 
-        // ────────────────────────────────────────────────
-        // ETA helpers
-        // ────────────────────────────────────────────────
+        // Calculate minutes until arrival
         function getMinutesUntil(etaTime) {
             if (!etaTime) return null;
-            const diffMs = new Date(etaTime) - new Date();
-            return Math.round(diffMs / 60000);
+            const now = new Date();
+            const eta = new Date(etaTime);
+            const diffMs = eta - now;
+            const diffMins = Math.round(diffMs / 60000);
+            return diffMins;
         }
 
+        // Check if should show RUN alert (within 4 minutes)
         function shouldRun(mins) {
             return mins !== null && mins >= 0 && mins <= 4;
         }
 
+        // Get time class based on minutes
         function getTimeClass(mins) {
             if (shouldRun(mins)) return 'run';
             if (mins <= 2) return 'arriving';
@@ -302,19 +902,22 @@
             return 'later';
         }
 
+        // Format ETA display
         function formatETA(mins) {
             if (mins === null || mins === undefined) return '--';
-            if (shouldRun(mins)) return mins <= 0 ? 'NOW!' : mins;
+            if (shouldRun(mins)) return mins <= 0 ? 'NOW!' : mins.toString();
             if (mins <= 0) return 'Now';
-            return mins;
+            return mins.toString();
         }
 
+        // Get ETA label
         function getETALabel(mins) {
             if (shouldRun(mins)) return 'RUN! 🏃‍♀️';
             if (mins <= 0) return 'Arriving';
             return 'min';
         }
 
+        // Render loading state
         function renderLoading(container) {
             container.innerHTML = `
                 <div class="loading-container">
@@ -324,51 +927,122 @@
             `;
         }
 
-        function renderError(container, msg = "Can't get times right now — check internet") {
+        // Render error state
+        function renderError(container, message) {
             container.innerHTML = `
                 <div class="error-container">
                     <div class="error-icon">🦕💤</div>
-                    <div class="error-text">${msg}</div>
+                    <div class="error-text">${message || "Can't get times right now — check internet or try again"}</div>
                 </div>
             `;
         }
 
+        // Render no data state
         function renderNoData(container) {
-            container.innerHTML = `<div class="no-data">No upcoming arrivals 🦕</div>`;
+            container.innerHTML = `
+                <div class="no-data">No upcoming arrivals found 🦕</div>
+            `;
         }
 
-        // ────────────────────────────────────────────────
-        // Bus ETA rendering (same as before)
-        // ────────────────────────────────────────────────
+        // Find stop ID from route-stop data
+        async function findStopId(route, direction, stationNamePattern) {
+            try {
+                // Get route-stop data for the route
+             const routeStopRes = await fetch(`${CONFIG.KMB_BASE}/route-stop/${route}/${direction}/1`);  const routeStopData = await routeStopRes.json();
+
+                if (!routeStopData.data || routeStopData.data.length === 0) {
+                    return null;
+                }
+
+                // Get all stops info
+                const stopsRes = await fetch(`${CONFIG.KMB_BASE}/stop`);
+                if (!stopsRes.ok) throw new Error('Failed to fetch stops');
+                const stopsData = await stopsRes.json();
+
+                // Create a map of stop_id to stop info
+                const stopsMap = {};
+                stopsData.data.forEach(stop => {
+                    stopsMap[stop.stop] = stop;
+                });
+
+                // Find the stop that matches the station name pattern
+                for (const routeStop of routeStopData.data) {
+                    const stopInfo = stopsMap[routeStop.stop];
+                    if (stopInfo) {
+                        const nameCombined = `${stopInfo.name_tc}${stopInfo.name_en}`.toLowerCase();
+                        if (stationNamePattern.some(p => nameCombined.includes(p.toLowerCase()))) {
+                            return routeStop.stop;
+                        }
+                    }
+                }
+
+                return null;
+            } catch (error) {
+                console.log('Error finding stop ID:', JSON.stringify(error));
+                return null;
+            }
+        }
+
+        // Fetch Bus ETA
+        async function fetchBusETA(stopId, route) {
+            try {
+                const response = await fetch(`${CONFIG.KMB_BASE}/eta/${stopId}/${route}/1`);
+                if (!response.ok) throw new Error('Failed to fetch bus ETA');
+                const data = await response.json();
+                return data.data || [];
+            } catch (error) {
+                console.log('Error fetching bus ETA:', JSON.stringify(error));
+                throw error;
+            }
+        }
+
+        // Fetch MTR Schedule
+        async function fetchMTRSchedule(line, station) {
+            try {
+                const response = await fetch(`${CONFIG.MTR_API}?line=${line}&sta=${station}`);
+                if (!response.ok) throw new Error('Failed to fetch MTR schedule');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.log('Error fetching MTR schedule:', JSON.stringify(error));
+                throw error;
+            }
+        }
+
+        // Render Bus ETA
         function renderBusETA(container, etaData) {
             if (!etaData || etaData.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            const valid = etaData.filter(item => item.eta).slice(0, 4);
+            // Filter and sort by ETA time
+            const validEtas = etaData
+                .filter(item => item.eta)
+                .slice(0, 4);
 
-            if (valid.length === 0) {
+            if (validEtas.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            container.innerHTML = valid.map(item => {
+            container.innerHTML = validEtas.map(item => {
                 const mins = getMinutesUntil(item.eta);
+                const timeClass = getTimeClass(mins);
                 const isRun = shouldRun(mins);
-                const dest = item.dest_tc || item.dest_en || 'Unknown';
+                const destination = item.dest_tc || item.dest_en || 'Unknown';
                 const remark = item.rmk_tc || item.rmk_en || '';
 
                 return `
                     <div class="eta-item ${isRun ? 'run-alert' : ''}">
                         <div class="eta-info">
-                            <div class="eta-destination">→ ${dest}</div>
+                            <div class="eta-destination">→ ${destination}</div>
                             <div class="eta-platform">${remark}</div>
                         </div>
                         <div class="eta-time">
                             <div class="eta-minutes-wrapper">
                                 ${isRun ? '<span class="alarm-icon">🚨</span>' : ''}
-                                <span class="eta-minutes ${getTimeClass(mins)}">${formatETA(mins)}</span>
+                                <span class="eta-minutes ${timeClass}">${formatETA(mins)}</span>
                             </div>
                             <span class="eta-label ${isRun ? 'run' : ''}">${getETALabel(mins)}</span>
                         </div>
@@ -377,53 +1051,68 @@
             }).join('');
         }
 
-        // ────────────────────────────────────────────────
-        // MTR rendering (unchanged)
-        // ────────────────────────────────────────────────
-        function renderMTRSchedule(container, mtrData, line, station, filterDirection = null) {
+        // Render MTR Schedule
+        function renderMTRSchedule(container, mtrData, line, station, filterDirection) {
             if (!mtrData || mtrData.status !== 1) {
-                renderError(container);
+                renderError(container, mtrData?.message || 'MTR schedule unavailable');
                 return;
             }
 
-            const key = `${line}-${station}`;
-            const lineData = mtrData.data?.[key];
+            const lineData = mtrData.data?.[`${line}-${station}`];
             if (!lineData) {
                 renderNoData(container);
                 return;
             }
 
-            let trains = [];
+            // Get trains based on filter direction
+            let allTrains = [];
+
             if (filterDirection === 'UP' && lineData.UP) {
-                trains = lineData.UP.map(t => ({...t, dir: 'UP'}));
+                lineData.UP.forEach(train => {
+                    allTrains.push({...train, direction: 'UP'});
+                });
             } else if (filterDirection === 'DOWN' && lineData.DOWN) {
-                trains = lineData.DOWN.map(t => ({...t, dir: 'DOWN'}));
+                lineData.DOWN.forEach(train => {
+                    allTrains.push({...train, direction: 'DOWN'});
+                });
             } else {
-                if (lineData.UP)   trains.push(...lineData.UP.map(t => ({...t, dir: 'UP'})));
-                if (lineData.DOWN) trains.push(...lineData.DOWN.map(t => ({...t, dir: 'DOWN'})));
+                // Get both directions
+                if (lineData.UP) {
+                    lineData.UP.forEach(train => {
+                        allTrains.push({...train, direction: 'UP'});
+                    });
+                }
+                if (lineData.DOWN) {
+                    lineData.DOWN.forEach(train => {
+                        allTrains.push({...train, direction: 'DOWN'});
+                    });
+                }
             }
 
-            if (trains.length === 0) {
+            if (allTrains.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            container.innerHTML = trains.slice(0, 4).map(train => {
+            container.innerHTML = allTrains.slice(0, 4).map(train => {
                 const mins = parseInt(train.ttnt) || 0;
+                const timeClass = getTimeClass(mins);
                 const isRun = shouldRun(mins);
-                const dest = getStationName(train.dest);
-                const plat  = train.plat ? `Platform ${train.plat}` : '';
+                // Use full station name
+                const destCode = train.dest || 'Unknown';
+                const dest = getStationName(destCode);
+                const platform = train.plat ? `Platform ${train.plat}` : '';
 
                 return `
                     <div class="eta-item ${isRun ? 'run-alert' : ''}">
                         <div class="eta-info">
                             <div class="eta-destination">→ ${dest}</div>
-                            <div class="eta-platform">${plat}</div>
+                            <div class="eta-platform">${platform}</div>
                         </div>
                         <div class="eta-time">
                             <div class="eta-minutes-wrapper">
                                 ${isRun ? '<span class="alarm-icon">🚨</span>' : ''}
-                                <span class="eta-minutes ${getTimeClass(mins)}">${mins <= 0 ? 'NOW!' : mins}</span>
+                                <span class="eta-minutes ${timeClass}">${mins <= 0 ? 'NOW!' : mins}</span>
                             </div>
                             <span class="eta-label ${isRun ? 'run' : ''}">${getETALabel(mins)}</span>
                         </div>
@@ -432,40 +1121,62 @@
             }).join('');
         }
 
-        function renderMTRScheduleFiltered(container, mtrData, line, station, allowedDests) {
+        // Render MTR Schedule with destination filter
+        function renderMTRScheduleFiltered(container, mtrData, line, station, allowedDestinations) {
             if (!mtrData || mtrData.status !== 1) {
-                renderError(container);
+                renderError(container, mtrData?.message || 'MTR schedule unavailable');
                 return;
             }
 
-            const key = `${line}-${station}`;
-            const lineData = mtrData.data?.[key];
-            if (!lineData) return renderNoData(container);
+            const lineData = mtrData.data?.[`${line}-${station}`];
+            if (!lineData) {
+                renderNoData(container);
+                return;
+            }
 
-            let trains = [];
-            if (lineData.UP)   trains.push(...lineData.UP.map(t => ({...t, dir: 'UP'})));
-            if (lineData.DOWN) trains.push(...lineData.DOWN.map(t => ({...t, dir: 'DOWN'})));
+            // Get all trains from both directions
+            let allTrains = [];
 
-            trains = trains.filter(t => allowedDests.includes(t.dest));
+            if (lineData.UP) {
+                lineData.UP.forEach(train => {
+                    allTrains.push({...train, direction: 'UP'});
+                });
+            }
+            if (lineData.DOWN) {
+                lineData.DOWN.forEach(train => {
+                    allTrains.push({...train, direction: 'DOWN'});
+                });
+            }
 
-            if (trains.length === 0) return renderNoData(container);
+            // Filter by allowed destinations
+            allTrains = allTrains.filter(train => {
+                return allowedDestinations.includes(train.dest);
+            });
 
-            container.innerHTML = trains.slice(0, 4).map(train => {
+            if (allTrains.length === 0) {
+                renderNoData(container);
+                return;
+            }
+
+            container.innerHTML = allTrains.slice(0, 4).map(train => {
                 const mins = parseInt(train.ttnt) || 0;
+                const timeClass = getTimeClass(mins);
                 const isRun = shouldRun(mins);
-                const dest = getStationName(train.dest);
-                const plat  = train.plat ? `Platform ${train.plat}` : '';
+                // Use full station name
+                const destCode = train.dest || 'Unknown';
+                const dest = getStationName(destCode);
+                const platform = train.plat ? `Platform ${train.plat}` : '';
 
                 return `
                     <div class="eta-item ${isRun ? 'run-alert' : ''}">
                         <div class="eta-info">
                             <div class="eta-destination">→ ${dest}</div>
-                            <div class="eta-platform">${plat}</div>
+                            <div class="eta-platform">${platform}</div>
                         </div>
                         <div class="eta-time">
                             <div class="eta-minutes-wrapper">
                                 ${isRun ? '<span class="alarm-icon">🚨</span>' : ''}
-                                <span class="eta-minutes ${getTimeClass(mins)}">${mins <= 0 ? 'NOW!' : mins}</span>
+                                <span class="eta-minutes ${timeClass}">${mins <= 0 ? 'NOW!' : mins}</span>
                             </div>
                             <span class="eta-label ${isRun ? 'run' : ''}">${getETALabel(mins)}</span>
                         </div>
@@ -474,15 +1185,22 @@
             }).join('');
         }
 
-        function updateTimestamp(id) {
+        // Update timestamp
+        function updateTimestamp(elementId) {
             const now = new Date();
-            const time = now.toLocaleTimeString('en-HK', {hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true});
-            document.getElementById(id).textContent = `Last updated: ${time} 🦕`;
+            const timeStr = now.toLocaleTimeString('en-HK', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = `Last updated: ${timeStr} 🦕`;
+            }
         }
 
-        // ────────────────────────────────────────────────
-        // Main refresh logic ─ simplified & CORS safer
-        // ────────────────────────────────────────────────
+        // Main refresh function
         async function refreshData() {
             if (currentPage === 'work') {
                 await refreshWorkPage();
@@ -491,97 +1209,129 @@
             }
         }
 
+        // Refresh Work Page
         async function refreshWorkPage() {
-            const busEl  = document.getElementById('work-bus-eta');
-            const mtrEl  = document.getElementById('work-mtr-eta');
+            const busContainer = document.getElementById('work-bus-eta');
+            const mtrContainer = document.getElementById('work-mtr-eta');
 
-            renderLoading(busEl);
-            renderLoading(mtrEl);
+            // Show loading
+            renderLoading(busContainer);
+            renderLoading(mtrContainer);
 
-            // Bus - prefer route-eta + filter by name
+            // Fetch Bus ETA
             try {
-                const res = await fetch(`${CONFIG.KMB_BASE}/route-eta/690S/1`);
-                if (!res.ok) throw new Error();
+                // Find stop ID for LOHAS Park The Visionary
+                const stopId = await findStopId('690S', 'outbound', ['日出康城', '領凱', 'lohas', 'visionary']);
 
-                const data = await res.json();
-                const candidates = data.data || [];
+                if (stopId) {
+                    const busData = await fetchBusETA(stopId, '690S');
+                    renderBusETA(busContainer, busData);
+                } else {
+                    // Try with alternative approach - fetch route ETA
+                    try {
+                        const routeEtaRes = await fetch(`${CONFIG.KMB_BASE}/route-eta/690S/1`);
+                        if (routeEtaRes.ok) {
+                            const routeEtaData = await routeEtaRes.json();
+                            // Filter for LOHAS Park related stops
+                            const lohasEtas = routeEtaData.data?.filter(item => {
+                                const stopName = (item.dest_tc || '') + (item.dest_en || '');
+                                return stopName.toLowerCase().includes('lohas') ||
+                                       stopName.includes('康城') ||
+                                       stopName.includes('日出');
+                            }) || [];
 
-                // Filter for LOHAS Park related stops
-                const lohas = candidates.filter(item =>
-                    /lohas|康城|領凱|visionary|日出/i.test(
-                        (item.name_tc||'') + (item.name_en||'') + (item.name_sc||'')
-                    )
-                );
-
-                renderBusETA(busEl, lohas.length > 0 ? lohas : candidates.slice(0,4));
-            } catch {
-                renderError(busEl);
+                            if (lohasEtas.length > 0) {
+                                renderBusETA(busContainer, lohasEtas);
+                            } else {
+                                renderBusETA(busContainer, routeEtaData.data?.slice(0, 4) || []);
+                            }
+                        } else {
+                            renderError(busContainer);
+                        }
+                    } catch (e) {
+                        renderError(busContainer);
+                    }
+                }
+            } catch (error) {
+                renderError(busContainer);
             }
 
-            // MTR LOHAS Park
+            // Fetch MTR Schedule
             try {
-                const mtr = await fetch(`${CONFIG.MTR_API}?line=${CONFIG.MTR_LINE_TKL}&sta=${CONFIG.MTR_STATION_LHP}`);
-                const json = await mtr.json();
-                renderMTRSchedule(mtrEl, json, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_LHP);
-            } catch {
-                renderError(mtrEl);
+                const mtrData = await fetchMTRSchedule(CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_LHP);
+                renderMTRSchedule(mtrContainer, mtrData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_LHP);
+            } catch (error) {
+                renderError(mtrContainer);
             }
 
             updateTimestamp('work-updated');
         }
 
+        // Refresh Home Page
         async function refreshHomePage() {
-            const busEl    = document.getElementById('home-bus-eta');
-            const nopEl    = document.getElementById('home-mtr-nop-eta');
-            const tikEl    = document.getElementById('home-mtr-tik-eta');
+            const busContainer = document.getElementById('home-bus-eta');
+            const mtrNopContainer = document.getElementById('home-mtr-nop-eta');
+            const mtrTikContainer = document.getElementById('home-mtr-tik-eta');
 
-            renderLoading(busEl);
-            renderLoading(nopEl);
-            renderLoading(tikEl);
+            // Show loading
+            renderLoading(busContainer);
+            renderLoading(mtrNopContainer);
+            renderLoading(mtrTikContainer);
 
-            // Bus - route-eta + filter Luard Road
+            // Fetch Bus ETA
             try {
-                const res = await fetch(`${CONFIG.KMB_BASE}/route-eta/690S/1`);
-                if (!res.ok) throw new Error();
+                // Find stop ID for Luard Road (inbound direction for going home)
+                const stopId = await findStopId('690S', 'inbound', ['盧押道', 'luard']);
 
-                const data = await res.json();
-                const candidates = data.data || [];
-
-                const luard = candidates.filter(item =>
-                    /luard|盧押道/i.test(
-                        (item.name_tc||'') + (item.name_en||'') + (item.name_sc||'')
-                    )
-                );
-
-                renderBusETA(busEl, luard.length > 0 ? luard : candidates.slice(0,4));
-            } catch {
-                renderError(busEl);
+                if (stopId) {
+                    const busData = await fetchBusETA(stopId, '690S');
+                    renderBusETA(busContainer, busData);
+                } else {
+                    // Try alternative approach
+                    try {
+                        const routeEtaRes = await fetch(`${CONFIG.KMB_BASE}/route-eta/690S/1`);
+                        if (routeEtaRes.ok) {
+                            const routeEtaData = await routeEtaRes.json();
+                            renderBusETA(busContainer, routeEtaData.data?.slice(0, 4) || []);
+                        } else {
+                            renderError(busContainer);
+                        }
+                    } catch (e) {
+                        renderError(busContainer);
+                    }
+                }
+            } catch (error) {
+                renderError(busContainer);
             }
 
-            // MTR North Point → LOHAS / TIK
+            // Fetch MTR Schedule for North Point (TKL Line - trains to LOHAS Park or TIK)
             try {
-                const res = await fetch(`${CONFIG.MTR_API}?line=${CONFIG.MTR_LINE_TKL}&sta=${CONFIG.MTR_STATION_NOP}`);
-                const json = await res.json();
-                renderMTRScheduleFiltered(nopEl, json, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_NOP, ['LHP', 'TIK']);
-            } catch {
-                renderError(nopEl);
+                const mtrNopData = await fetchMTRSchedule(CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_NOP);
+                // Filter for trains going to LOHAS Park or Tiu Keng Leng
+                renderMTRScheduleFiltered(mtrNopContainer, mtrNopData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_NOP, ['LHP', 'TIK']);
+            } catch (error) {
+                renderError(mtrNopContainer);
             }
 
-            // MTR Tiu Keng Leng → LOHAS
+            // Fetch MTR Schedule for Tiu Keng Leng (TKL - trains to LOHAS Park only)
             try {
-                const res = await fetch(`${CONFIG.MTR_API}?line=${CONFIG.MTR_LINE_TKL}&sta=${CONFIG.MTR_STATION_TIK}`);
-                const json = await res.json();
-                renderMTRScheduleFiltered(tikEl, json, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TIK, ['LHP']);
-            } catch {
-                renderError(tikEl);
+                const mtrTikData = await fetchMTRSchedule(CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TIK);
+                // Filter for trains going to LOHAS Park only
+                renderMTRScheduleFiltered(mtrTikContainer, mtrTikData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TIK, ['LHP']);
+            } catch (error) {
+                renderError(mtrTikContainer);
             }
 
             updateTimestamp('home-updated');
         }
 
-        // Start
+        // Initial load
         refreshData();
+
+        // Auto-refresh every 30 seconds
         setInterval(refreshData, 30000);
     </script>
-</body>
-</html>
+
+
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c57517fba8b4625',t:'MTc2OTY3NDkxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
