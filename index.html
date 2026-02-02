@@ -65,74 +65,10 @@
             z-index: -1;
         }
 
-        /* Birthday Banner */
-        .birthday-banner {
-            background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 50%, #C44569 100%);
-            padding: 12px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.1); }
-        }
-
-        .birthday-banner::before,
-        .birthday-banner::after {
-            content: '🎉';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            animation: bounce 1s ease-in-out infinite;
-        }
-
-        .birthday-banner::before { left: 15px; }
-        .birthday-banner::after { right: 15px; animation-delay: 0.5s; }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(-50%) scale(1); }
-            50% { transform: translateY(-60%) scale(1.2); }
-        }
-
-        .birthday-text {
-            color: white;
-            font-family: 'Fredoka', sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .birthday-text .age-badge {
-            background: white;
-            color: #C44569;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-weight: 700;
-        }
-
-        .birthday-text .dino-emoji {
-            font-size: 24px;
-            display: inline-block;
-            animation: dinoWalk 0.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes dinoWalk {
-            0% { transform: translateY(0) rotate(-5deg); }
-            100% { transform: translateY(-3px) rotate(5deg); }
-        }
-
         /* Header */
         .header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--mtr-purple) 100%);
-            padding: 20px;
+            padding: 20px 20px 16px;
             text-align: center;
             position: relative;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -157,6 +93,43 @@
         @keyframes headBob {
             0%, 100% { transform: rotate(-5deg); }
             50% { transform: rotate(5deg); }
+        }
+
+        /* Slogan */
+        .slogan {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            display: inline-flex;
+        }
+
+        .slogan-wrapper {
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .slogan-text {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .slogan .dino-icon {
+            font-size: 18px;
+            display: inline-block;
+            animation: dinoWalk 0.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes dinoWalk {
+            0% { transform: translateY(0) rotate(-5deg); }
+            100% { transform: translateY(-2px) rotate(5deg); }
         }
 
         /* Navigation Tabs */
@@ -567,7 +540,7 @@
         /* Responsive adjustments */
         @media (max-width: 380px) {
             .header h1 { font-size: 22px; }
-            .birthday-text { font-size: 14px; }
+            .slogan-text { font-size: 13px; }
             .nav-tab { font-size: 14px; padding: 12px 10px; }
         }
 
@@ -578,15 +551,6 @@
     </style>
 </head>
 <body>
-    <!-- Birthday Banner -->
-    <div class="birthday-banner">
-        <div class="birthday-text">
-            <span class="dino-emoji">🦖</span>
-            Happy <span class="age-badge">30th</span> Birthday YY!
-            <span class="dino-emoji">🦕</span>
-        </div>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <h1>
@@ -618,6 +582,13 @@
             </svg>
             YY Transports
         </h1>
+        <div class="slogan-wrapper">
+            <div class="slogan">
+                <span class="dino-icon">🦖</span>
+                <span class="slogan-text">Happy 4127 Birthday</span>
+                <span class="dino-icon">🦕</span>
+            </div>
+        </div>
     </header>
 
     <!-- Navigation Tabs -->
@@ -641,7 +612,7 @@
                 <div class="section-icon bus">🚌</div>
                 <div>
                     <div class="section-title">Bus 690S</div>
-                    <div class="section-subtitle">日出康城領凱站</div>
+                    <div class="section-subtitle">日出康城領凱站 → 灣仔</div>
                 </div>
             </div>
             <div class="station-card" id="work-bus-card">
@@ -684,7 +655,7 @@
                 <div class="section-icon bus">🚌</div>
                 <div>
                     <div class="section-title">Bus 690S</div>
-                    <div class="section-subtitle">盧押道站</div>
+                    <div class="section-subtitle">盧押道站 → 日出康城</div>
                 </div>
             </div>
             <div class="station-card" id="home-bus-card">
@@ -937,8 +908,8 @@
             `;
         }
 
-        // Find stop ID from route-stop data
-        async function findStopId(route, direction, stationNamePattern) {
+        // Find stop ID from route-stop data for KMB
+        async function findKMBStopId(route, direction, stationNamePattern) {
             try {
                 // Get route-stop data for the route
                 const routeStopRes = await fetch(`${CONFIG.KMB_BASE}/route-stop/${route}/${direction}/1`);
@@ -973,7 +944,7 @@
 
                 return null;
             } catch (error) {
-                console.log('Error finding stop ID:', JSON.stringify(error));
+                console.log('Error finding KMB stop ID:', JSON.stringify(error));
                 return null;
             }
         }
@@ -996,10 +967,14 @@
             try {
                 // Get route-stop data for CTB
                 const routeStopRes = await fetch(`${CONFIG.CTB_BASE}/route-stop/CTB/${route}/${direction}`);
-                if (!routeStopRes.ok) return null;
+                if (!routeStopRes.ok) {
+                    console.log('CTB route-stop fetch failed:', routeStopRes.status);
+                    return null;
+                }
                 const routeStopData = await routeStopRes.json();
 
                 if (!routeStopData.data || routeStopData.data.length === 0) {
+                    console.log('No CTB route-stop data found');
                     return null;
                 }
 
@@ -1045,17 +1020,14 @@
         async function fetchCombinedBusETA(kmbStopId, ctbStopId, route) {
             const results = [];
 
-            // Fetch KMB ETA
-            if (kmbStopId) {
-                const kmbData = await fetchKMBBusETA(kmbStopId, route);
-                results.push(...kmbData);
-            }
+            // Fetch both in parallel
+            const [kmbData, ctbData] = await Promise.all([
+                kmbStopId ? fetchKMBBusETA(kmbStopId, route) : Promise.resolve([]),
+                ctbStopId ? fetchCTBBusETA(ctbStopId, route) : Promise.resolve([])
+            ]);
 
-            // Fetch CTB ETA
-            if (ctbStopId) {
-                const ctbData = await fetchCTBBusETA(ctbStopId, route);
-                results.push(...ctbData);
-            }
+            results.push(...kmbData);
+            results.push(...ctbData);
 
             // Sort by ETA time
             results.sort((a, b) => {
@@ -1292,13 +1264,16 @@
             renderLoading(mtrContainer);
 
             // Fetch Bus ETA from both KMB and Citybus
+            // For Go Work: From 日出康城領凱站 TO Wanchai
+            // Route 690S: 日出康城 → 灣仔 is "inbound" direction for this route
             try {
                 const stationPatterns = ['日出康城', '領凱', 'lohas', 'visionary'];
 
                 // Find stop IDs for both operators in parallel
+                // Using "inbound" for buses going from LOHAS Park to Wan Chai
                 const [kmbStopId, ctbStopId] = await Promise.all([
-                    findStopId('690S', 'outbound', stationPatterns),
-                    findCTBStopId('690S', 'outbound', stationPatterns)
+                    findKMBStopId('690S', 'inbound', stationPatterns),
+                    findCTBStopId('690S', 'inbound', stationPatterns)
                 ]);
 
                 if (kmbStopId || ctbStopId) {
@@ -1332,13 +1307,16 @@
             renderLoading(mtrTkoContainer);
 
             // Fetch Bus ETA from both KMB and Citybus
+            // For Go Home: From 盧押道 TO LOHAS Park
+            // Route 690S: 灣仔 → 日出康城 is "outbound" direction for this route
             try {
                 const stationPatterns = ['盧押道', 'luard'];
 
                 // Find stop IDs for both operators in parallel
+                // Using "outbound" for buses going from Wan Chai to LOHAS Park
                 const [kmbStopId, ctbStopId] = await Promise.all([
-                    findStopId('690S', 'inbound', stationPatterns),
-                    findCTBStopId('690S', 'inbound', stationPatterns)
+                    findKMBStopId('690S', 'outbound', stationPatterns),
+                    findCTBStopId('690S', 'outbound', stationPatterns)
                 ]);
 
                 if (kmbStopId || ctbStopId) {
@@ -1371,3 +1349,4 @@
     </script>
 </body>
 </html>
+
