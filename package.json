@@ -1,0 +1,9 @@
+{
+  "name": "kmb-cors-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Run via Vercel dashboard or vercel dev'"
+  },
+  "dependencies": {}
+}
