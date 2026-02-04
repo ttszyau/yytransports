@@ -49,7 +49,6 @@
             overflow-x: hidden;
         }
 
-        /* Background pattern */
         body::before {
             content: '';
             position: fixed;
@@ -65,7 +64,6 @@
             z-index: -1;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--mtr-purple) 100%);
             padding: 20px 20px 16px;
@@ -95,7 +93,6 @@
             50% { transform: rotate(5deg); }
         }
 
-        /* Slogan */
         .slogan {
             display: flex;
             align-items: center;
@@ -132,7 +129,6 @@
             100% { transform: translateY(-2px) rotate(5deg); }
         }
 
-        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             background: var(--bg-card);
@@ -174,7 +170,6 @@
             font-size: 20px;
         }
 
-        /* Content Area */
         .content {
             padding: 0 16px 100px;
         }
@@ -193,7 +188,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Section Header */
         .section-header {
             display: flex;
             align-items: center;
@@ -225,7 +219,6 @@
             color: var(--text-secondary);
         }
 
-        /* Station Card */
         .station-card {
             background: var(--bg-card);
             border-radius: 20px;
@@ -264,7 +257,6 @@
             color: var(--mtr-purple);
         }
 
-        /* ETA List */
         .eta-list {
             display: flex;
             flex-direction: column;
@@ -289,7 +281,6 @@
             transform: translateX(4px);
         }
 
-        /* RUN Alert Style */
         .eta-item.run-alert {
             background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
             border: 2px solid var(--danger);
@@ -408,7 +399,6 @@
             font-size: 13px;
         }
 
-        /* Loading State */
         .loading-container {
             display: flex;
             flex-direction: column;
@@ -448,7 +438,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Error State */
         .error-container {
             display: flex;
             flex-direction: column;
@@ -469,7 +458,6 @@
             line-height: 1.5;
         }
 
-        /* Refresh Button */
         .refresh-btn {
             position: fixed;
             bottom: 24px;
@@ -503,7 +491,6 @@
             animation: spin 1s linear infinite;
         }
 
-        /* Last Updated */
         .last-updated {
             text-align: center;
             font-size: 12px;
@@ -511,7 +498,6 @@
             padding: 16px;
         }
 
-        /* Dino Decorations */
         .dino-decor {
             position: fixed;
             bottom: 24px;
@@ -529,7 +515,6 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* No Data Message */
         .no-data {
             text-align: center;
             padding: 20px;
@@ -537,46 +522,36 @@
             font-size: 14px;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 380px) {
             .header h1 { font-size: 22px; }
             .slogan-text { font-size: 13px; }
             .nav-tab { font-size: 14px; padding: 12px 10px; }
         }
 
-        /* SVG Dino styles */
         .dino-svg {
             fill: currentColor;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <h1>
             <svg class="header-icon" viewBox="0 0 100 100" fill="white" style="width: 50px; height: 50px; animation: headBob 2s ease-in-out infinite;">
-                <!-- Car body -->
                 <rect x="10" y="45" width="80" height="30" rx="8" ry="8"/>
-                <!-- Car roof -->
                 <path d="M25 45 L35 25 L65 25 L75 45 Z"/>
-                <!-- Windows -->
                 <rect x="37" y="28" width="12" height="14" rx="2" fill="rgba(0,0,0,0.3)"/>
                 <rect x="51" y="28" width="12" height="14" rx="2" fill="rgba(0,0,0,0.3)"/>
-                <!-- Wheels -->
                 <circle cx="28" cy="75" r="12" fill="#333"/>
                 <circle cx="28" cy="75" r="6" fill="#666"/>
                 <circle cx="72" cy="75" r="12" fill="#333"/>
                 <circle cx="72" cy="75" r="6" fill="#666"/>
-                <!-- Eyes on windshield -->
                 <ellipse cx="42" cy="52" rx="8" ry="10" fill="white"/>
                 <ellipse cx="58" cy="52" rx="8" ry="10" fill="white"/>
                 <circle cx="44" cy="54" r="4" fill="#333"/>
                 <circle cx="60" cy="54" r="4" fill="#333"/>
                 <circle cx="45" cy="53" r="1.5" fill="white"/>
                 <circle cx="61" cy="53" r="1.5" fill="white"/>
-                <!-- Smile -->
                 <path d="M42 62 Q50 68 58 62" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <!-- Headlights -->
                 <rect x="12" y="52" width="8" height="6" rx="2" fill="#FFD93D"/>
                 <rect x="80" y="52" width="8" height="6" rx="2" fill="#FFD93D"/>
             </svg>
@@ -591,7 +566,6 @@
         </div>
     </header>
 
-    <!-- Navigation Tabs -->
     <nav class="nav-tabs" role="tablist">
         <button class="nav-tab active" data-page="work" role="tab" aria-selected="true">
             <span class="icon">🏢</span>
@@ -603,11 +577,8 @@
         </button>
     </nav>
 
-    <!-- Content -->
     <main class="content">
-        <!-- Go Work Page -->
         <div class="page active" id="page-work">
-            <!-- Bus Section -->
             <div class="section-header">
                 <div class="section-icon bus">🚌</div>
                 <div>
@@ -626,7 +597,6 @@
                 </div>
             </div>
 
-            <!-- MTR Section -->
             <div class="section-header">
                 <div class="section-icon mtr">🚇</div>
                 <div>
@@ -648,9 +618,7 @@
             <div class="last-updated" id="work-updated"></div>
         </div>
 
-        <!-- Go Home Page -->
         <div class="page" id="page-home">
-            <!-- Bus Section -->
             <div class="section-header">
                 <div class="section-icon bus">🚌</div>
                 <div>
@@ -669,7 +637,6 @@
                 </div>
             </div>
 
-            <!-- MTR Tseung Kwan O Section -->
             <div class="section-header">
                 <div class="section-icon mtr">🚇</div>
                 <div>
@@ -692,7 +659,6 @@
         </div>
     </main>
 
-    <!-- Refresh Button -->
     <button class="refresh-btn" id="refresh-btn" aria-label="Refresh times">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 2v6h-6"/>
@@ -702,7 +668,6 @@
         </svg>
     </button>
 
-    <!-- Decorative Dino -->
     <svg class="dino-decor" viewBox="0 0 100 100" fill="var(--dino-green)">
         <path d="M90 45c0-20-15-35-35-35s-35 15-35 35c0 5 1 10 3 14l-8 8c-2 2-2 5 0 7s5 2 7 0l8-8c4 2 9 4 14 4h8v20c0 3 2 5 5 5s5-2 5-5V75h8v20c0 3 2 5 5 5s5-2 5-5V75c10-5 18-16 18-30zM45 40c-4 0-7-3-7-7s3-7 7-7 7 3 7 7-3 7-7 7zm20 0c-4 0-7-3-7-7s3-7 7-7 7 3 7 7-3 7-7 7z"/>
     </svg>
@@ -720,17 +685,14 @@
             }
         });
 
-        // MTR Station Name Mapping (Full names for all lines)
+        // MTR Station Name Mapping
         const MTR_STATION_NAMES = {
-            // Tseung Kwan O Line
             'LHP': 'LOHAS Park 康城',
             'TIK': 'Tiu Keng Leng 調景嶺',
             'TKO': 'Tseung Kwan O 將軍澳',
             'HAH': 'Hang Hau 坑口',
             'POA': 'Po Lam 寶琳',
             'YAT': 'Yau Tong 油塘',
-
-            // Island Line
             'KET': 'Kennedy Town 堅尼地城',
             'HKU': 'HKU 香港大學',
             'SYP': 'Sai Ying Pun 西營盤',
@@ -747,65 +709,37 @@
             'SWH': 'Sai Wan Ho 西灣河',
             'SKW': 'Shau Kei Wan 筲箕灣',
             'HFC': 'Heng Fa Chuen 杏花邨',
-            'CHW': 'Chai Wan 柴灣',
-
-            // Kwun Tong Line
-            'WHA': 'Whampoa 黃埔',
-            'HOM': 'Ho Man Tin 何文田',
-            'YMT': 'Yau Ma Tei 油麻地',
-            'MOK': 'Mong Kok 旺角',
-            'PRE': 'Prince Edward 太子',
-            'SKM': 'Shek Kip Mei 石硤尾',
-            'KOT': 'Kowloon Tong 九龍塘',
-            'LOF': 'Lok Fu 樂富',
-            'WTS': 'Wong Tai Sin 黃大仙',
-            'DIH': 'Diamond Hill 鑽石山',
-            'CHH': 'Choi Hung 彩虹',
-            'KOB': 'Kowloon Bay 九龍灣',
-            'NTK': 'Ngau Tau Kok 牛頭角',
-            'KWT': 'Kwun Tong 觀塘',
-            'LAT': 'Lam Tin 藍田',
-
-            // Tsuen Wan Line
-            'TSW': 'Tsuen Wan 荃灣',
-            'TWH': 'Tai Wo Hau 大窩口',
-            'KWH': 'Kwai Hing 葵興',
-            'KWF': 'Kwai Fong 葵芳',
-            'LAK': 'Lai King 荔景',
-            'MEF': 'Mei Foo 美孚',
-            'LCK': 'Lai Chi Kok 荔枝角',
-            'CSW': 'Cheung Sha Wan 長沙灣',
-            'SSP': 'Sham Shui Po 深水埗',
-            'JOR': 'Jordan 佐敦',
-            'TST': 'Tsim Sha Tsui 尖沙咀'
+            'CHW': 'Chai Wan 柴灣'
         };
 
-        // Get full station name
         function getStationName(code) {
             return MTR_STATION_NAMES[code] || code;
         }
 
         // API Configuration
         const CONFIG = {
-            // KMB API endpoints
             KMB_BASE: 'https://data.etabus.gov.hk/v1/transport/kmb',
-            // Citybus API endpoints
             CTB_BASE: 'https://rt.data.gov.hk/v2/transport/citybus',
-            // MTR API endpoint
             MTR_API: 'https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php',
-
-            // Bus route
             BUS_ROUTE: '690S',
-
-            // MTR Configuration
-            MTR_LINE_TKL: 'TKL',  // Tseung Kwan O Line
-            MTR_STATION_LHP: 'LHP',  // LOHAS Park
-            MTR_STATION_TKO: 'TKO'   // Tseung Kwan O
+            MTR_LINE_TKL: 'TKL',
+            MTR_STATION_LHP: 'LHP',
+            MTR_STATION_TKO: 'TKO'
         };
 
-        // Global state
+        // Fixed stop IDs (these should work)
+        const FIXED_STOPS = {
+            work: {
+                kmb: '815BC43527FD9247',
+                ctb: '002920'
+            },
+            home: {
+                kmb: '255401DABB64289D',
+                ctb: '003329'
+            }
+        };
+
         let currentPage = 'work';
-        let stopData = null;
 
         // Navigation
         document.querySelectorAll('.nav-tab').forEach(tab => {
@@ -817,8 +751,6 @@
 
         function switchPage(page) {
             currentPage = page;
-
-            // Update tabs
             document.querySelectorAll('.nav-tab').forEach(t => {
                 t.classList.remove('active');
                 t.setAttribute('aria-selected', 'false');
@@ -826,11 +758,9 @@
             document.querySelector(`[data-page="${page}"]`).classList.add('active');
             document.querySelector(`[data-page="${page}"]`).setAttribute('aria-selected', 'true');
 
-            // Update pages
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(`page-${page}`).classList.add('active');
 
-            // Refresh data for the new page
             refreshData();
         }
 
@@ -843,22 +773,18 @@
             });
         });
 
-        // Calculate minutes until arrival
         function getMinutesUntil(etaTime) {
             if (!etaTime) return null;
             const now = new Date();
             const eta = new Date(etaTime);
             const diffMs = eta - now;
-            const diffMins = Math.round(diffMs / 60000);
-            return diffMins;
+            return Math.round(diffMs / 60000);
         }
 
-        // Check if should show RUN alert (within 4 minutes)
         function shouldRun(mins) {
             return mins !== null && mins >= 0 && mins <= 4;
         }
 
-        // Get time class based on minutes
         function getTimeClass(mins) {
             if (shouldRun(mins)) return 'run';
             if (mins <= 2) return 'arriving';
@@ -866,7 +792,6 @@
             return 'later';
         }
 
-        // Format ETA display
         function formatETA(mins) {
             if (mins === null || mins === undefined) return '--';
             if (shouldRun(mins)) return mins <= 0 ? 'NOW!' : mins.toString();
@@ -874,14 +799,12 @@
             return mins.toString();
         }
 
-        // Get ETA label
         function getETALabel(mins) {
             if (shouldRun(mins)) return 'RUN! 🏃‍♀️';
             if (mins <= 0) return 'Arriving';
             return 'min';
         }
 
-        // Render loading state
         function renderLoading(container) {
             container.innerHTML = `
                 <div class="loading-container">
@@ -891,197 +814,94 @@
             `;
         }
 
-        // Render error state
-        function renderError(container, message) {
+        function renderError(container, message = "Can't get times right now — check internet or try again") {
             container.innerHTML = `
                 <div class="error-container">
                     <div class="error-icon">🦕💤</div>
-                    <div class="error-text">${message || "Can't get times right now — check internet or try again"}</div>
+                    <div class="error-text">${message}</div>
                 </div>
             `;
         }
 
-        // Render no data state
         function renderNoData(container) {
             container.innerHTML = `
                 <div class="no-data">No upcoming arrivals found 🦕</div>
             `;
         }
 
-        // Find stop ID from route-stop data for KMB
-        async function findKMBStopId(route, direction, stationNamePattern) {
-            try {
-                // Get route-stop data for the route
-                const routeStopRes = await fetch(`${CONFIG.KMB_BASE}/route-stop/${route}/${direction}/1`);
-                if (!routeStopRes.ok) throw new Error('Failed to fetch route stops');
-                const routeStopData = await routeStopRes.json();
-
-                if (!routeStopData.data || routeStopData.data.length === 0) {
-                    return null;
-                }
-
-                // Get all stops info
-                const stopsRes = await fetch(`${CONFIG.KMB_BASE}/stop`);
-                if (!stopsRes.ok) throw new Error('Failed to fetch stops');
-                const stopsData = await stopsRes.json();
-
-                // Create a map of stop_id to stop info
-                const stopsMap = {};
-                stopsData.data.forEach(stop => {
-                    stopsMap[stop.stop] = stop;
-                });
-
-                // Find the stop that matches the station name pattern
-                for (const routeStop of routeStopData.data) {
-                    const stopInfo = stopsMap[routeStop.stop];
-                    if (stopInfo) {
-                        const nameCombined = `${stopInfo.name_tc}${stopInfo.name_en}`.toLowerCase();
-                        if (stationNamePattern.some(p => nameCombined.includes(p.toLowerCase()))) {
-                            return routeStop.stop;
-                        }
-                    }
-                }
-
-                return null;
-            } catch (error) {
-                console.log('Error finding KMB stop ID:', JSON.stringify(error));
-                return null;
-            }
-        }
-
-        // Fetch KMB Bus ETA
+        // ─── Bus ETA Fetching ────────────────────────────────────────
         async function fetchKMBBusETA(stopId, route) {
             try {
-                const response = await fetch(`${CONFIG.KMB_BASE}/eta/${stopId}/${route}/1`);
-                if (!response.ok) throw new Error('Failed to fetch KMB bus ETA');
-                const data = await response.json();
+                const res = await fetch(`${CONFIG.KMB_BASE}/eta/${stopId}/${route}/1`);
+                if (!res.ok) throw new Error('KMB ETA failed');
+                const data = await res.json();
                 return (data.data || []).map(item => ({...item, operator: 'KMB'}));
-            } catch (error) {
-                console.log('Error fetching KMB bus ETA:', JSON.stringify(error));
+            } catch (e) {
+                console.warn('KMB fetch error:', e);
                 return [];
             }
         }
 
-        // Find Citybus stop ID
-        async function findCTBStopId(route, direction, stationNamePattern) {
-            try {
-                // Get route-stop data for CTB
-                const routeStopRes = await fetch(`${CONFIG.CTB_BASE}/route-stop/CTB/${route}/${direction}`);
-                if (!routeStopRes.ok) {
-                    console.log('CTB route-stop fetch failed:', routeStopRes.status);
-                    return null;
-                }
-                const routeStopData = await routeStopRes.json();
-
-                if (!routeStopData.data || routeStopData.data.length === 0) {
-                    console.log('No CTB route-stop data found');
-                    return null;
-                }
-
-                // Check each stop to find matching name
-                for (const routeStop of routeStopData.data) {
-                    try {
-                        const stopRes = await fetch(`${CONFIG.CTB_BASE}/stop/${routeStop.stop}`);
-                        if (stopRes.ok) {
-                            const stopData = await stopRes.json();
-                            const stopInfo = stopData.data;
-                            if (stopInfo) {
-                                const nameCombined = `${stopInfo.name_tc || ''}${stopInfo.name_en || ''}`.toLowerCase();
-                                if (stationNamePattern.some(p => nameCombined.includes(p.toLowerCase()))) {
-                                    return routeStop.stop;
-                                }
-                            }
-                        }
-                    } catch (e) {
-                        continue;
-                    }
-                }
-                return null;
-            } catch (error) {
-                console.log('Error finding CTB stop ID:', JSON.stringify(error));
-                return null;
-            }
-        }
-
-        // Fetch Citybus ETA
         async function fetchCTBBusETA(stopId, route) {
             try {
-                const response = await fetch(`${CONFIG.CTB_BASE}/eta/CTB/${stopId}/${route}`);
-                if (!response.ok) throw new Error('Failed to fetch CTB bus ETA');
-                const data = await response.json();
+                const res = await fetch(`${CONFIG.CTB_BASE}/eta/CTB/${stopId}/${route}`);
+                if (!res.ok) throw new Error('CTB ETA failed');
+                const data = await res.json();
                 return (data.data || []).map(item => ({...item, operator: 'CTB'}));
-            } catch (error) {
-                console.log('Error fetching CTB bus ETA:', JSON.stringify(error));
+            } catch (e) {
+                console.warn('CTB fetch error:', e);
                 return [];
             }
         }
 
-        // Fetch combined bus ETA from KMB and Citybus
         async function fetchCombinedBusETA(kmbStopId, ctbStopId, route) {
-            const results = [];
-
-            // Fetch both in parallel
             const [kmbData, ctbData] = await Promise.all([
                 kmbStopId ? fetchKMBBusETA(kmbStopId, route) : Promise.resolve([]),
                 ctbStopId ? fetchCTBBusETA(ctbStopId, route) : Promise.resolve([])
             ]);
 
-            results.push(...kmbData);
-            results.push(...ctbData);
-
-            // Sort by ETA time
-            results.sort((a, b) => {
-                const timeA = a.eta ? new Date(a.eta) : new Date('9999-12-31');
-                const timeB = b.eta ? new Date(b.eta) : new Date('9999-12-31');
-                return timeA - timeB;
-            });
-
-            return results;
+            const combined = [...kmbData, ...ctbData].filter(item => item.eta);
+            combined.sort((a, b) => new Date(a.eta) - new Date(b.eta));
+            return combined;
         }
 
-        // Fetch MTR Schedule
+        // ─── MTR ─────────────────────────────────────────────────────
         async function fetchMTRSchedule(line, station) {
             try {
-                const response = await fetch(`${CONFIG.MTR_API}?line=${line}&sta=${station}`);
-                if (!response.ok) throw new Error('Failed to fetch MTR schedule');
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.log('Error fetching MTR schedule:', JSON.stringify(error));
-                throw error;
+                const res = await fetch(`${CONFIG.MTR_API}?line=${line}&sta=${station}`);
+                if (!res.ok) throw new Error('MTR failed');
+                return await res.json();
+            } catch (e) {
+                console.warn('MTR fetch error:', e);
+                throw e;
             }
         }
 
-        // Render Bus ETA
         function renderBusETA(container, etaData) {
             if (!etaData || etaData.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            // Filter and sort by ETA time
-            const validEtas = etaData
-                .filter(item => item.eta)
-                .slice(0, 5);
-
-            if (validEtas.length === 0) {
+            const valid = etaData.filter(item => item.eta).slice(0, 5);
+            if (valid.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            container.innerHTML = validEtas.map(item => {
+            container.innerHTML = valid.map(item => {
                 const mins = getMinutesUntil(item.eta);
                 const timeClass = getTimeClass(mins);
                 const isRun = shouldRun(mins);
-                const destination = item.dest_tc || item.dest_en || 'Unknown';
+                const dest = item.dest_tc || item.dest_en || 'Unknown';
                 const remark = item.rmk_tc || item.rmk_en || '';
-                const operator = item.operator || '';
-                const operatorBadge = operator ? `<span class="operator-badge ${operator.toLowerCase()}">${operator}</span>` : '';
+                const op = item.operator || '';
+                const opBadge = op ? `<span class="operator-badge ${op.toLowerCase()}">${op}</span>` : '';
 
                 return `
                     <div class="eta-item ${isRun ? 'run-alert' : ''}">
                         <div class="eta-info">
-                            <div class="eta-destination">${operatorBadge} → ${destination}</div>
+                            <div class="eta-destination">${opBadge} → ${dest}</div>
                             <div class="eta-platform">${remark}</div>
                         </div>
                         <div class="eta-time">
@@ -1096,63 +916,46 @@
             }).join('');
         }
 
-        // Render MTR Schedule
-        function renderMTRSchedule(container, mtrData, line, station, filterDirection) {
+        function renderMTRSchedule(container, mtrData, line, station, filterDirection = null) {
             if (!mtrData || mtrData.status !== 1) {
-                renderError(container, mtrData?.message || 'MTR schedule unavailable');
+                renderError(container, mtrData?.message || 'MTR unavailable');
                 return;
             }
 
-            const lineData = mtrData.data?.[`${line}-${station}`];
+            const key = `${line}-${station}`;
+            const lineData = mtrData.data?.[key];
             if (!lineData) {
                 renderNoData(container);
                 return;
             }
 
-            // Get trains based on filter direction
-            let allTrains = [];
-
+            let trains = [];
             if (filterDirection === 'UP' && lineData.UP) {
-                lineData.UP.forEach(train => {
-                    allTrains.push({...train, direction: 'UP'});
-                });
+                trains = lineData.UP.map(t => ({...t, direction: 'UP'}));
             } else if (filterDirection === 'DOWN' && lineData.DOWN) {
-                lineData.DOWN.forEach(train => {
-                    allTrains.push({...train, direction: 'DOWN'});
-                });
+                trains = lineData.DOWN.map(t => ({...t, direction: 'DOWN'}));
             } else {
-                // Get both directions
-                if (lineData.UP) {
-                    lineData.UP.forEach(train => {
-                        allTrains.push({...train, direction: 'UP'});
-                    });
-                }
-                if (lineData.DOWN) {
-                    lineData.DOWN.forEach(train => {
-                        allTrains.push({...train, direction: 'DOWN'});
-                    });
-                }
+                if (lineData.UP)   trains.push(...lineData.UP.map(t => ({...t, direction: 'UP'})));
+                if (lineData.DOWN) trains.push(...lineData.DOWN.map(t => ({...t, direction: 'DOWN'})));
             }
 
-            if (allTrains.length === 0) {
+            if (trains.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            container.innerHTML = allTrains.slice(0, 4).map(train => {
+            container.innerHTML = trains.slice(0, 4).map(train => {
                 const mins = parseInt(train.ttnt) || 0;
                 const timeClass = getTimeClass(mins);
                 const isRun = shouldRun(mins);
-                // Use full station name
-                const destCode = train.dest || 'Unknown';
-                const dest = getStationName(destCode);
-                const platform = train.plat ? `Platform ${train.plat}` : '';
+                const dest = getStationName(train.dest || 'Unknown');
+                const plat = train.plat ? `Platform ${train.plat}` : '';
 
                 return `
                     <div class="eta-item ${isRun ? 'run-alert' : ''}">
                         <div class="eta-info">
                             <div class="eta-destination">→ ${dest}</div>
-                            <div class="eta-platform">${platform}</div>
+                            <div class="eta-platform">${plat}</div>
                         </div>
                         <div class="eta-time">
                             <div class="eta-minutes-wrapper">
@@ -1166,57 +969,42 @@
             }).join('');
         }
 
-        // Render MTR Schedule with destination filter
-        function renderMTRScheduleFiltered(container, mtrData, line, station, allowedDestinations) {
+        function renderMTRScheduleFiltered(container, mtrData, line, station, allowedDest) {
             if (!mtrData || mtrData.status !== 1) {
-                renderError(container, mtrData?.message || 'MTR schedule unavailable');
+                renderError(container);
                 return;
             }
 
-            const lineData = mtrData.data?.[`${line}-${station}`];
+            const key = `${line}-${station}`;
+            const lineData = mtrData.data?.[key];
             if (!lineData) {
                 renderNoData(container);
                 return;
             }
 
-            // Get all trains from both directions
-            let allTrains = [];
+            let trains = [];
+            if (lineData.UP)   trains.push(...lineData.UP.map(t => ({...t, direction: 'UP'})));
+            if (lineData.DOWN) trains.push(...lineData.DOWN.map(t => ({...t, direction: 'DOWN'})));
 
-            if (lineData.UP) {
-                lineData.UP.forEach(train => {
-                    allTrains.push({...train, direction: 'UP'});
-                });
-            }
-            if (lineData.DOWN) {
-                lineData.DOWN.forEach(train => {
-                    allTrains.push({...train, direction: 'DOWN'});
-                });
-            }
+            trains = trains.filter(t => allowedDest.includes(t.dest));
 
-            // Filter by allowed destinations
-            allTrains = allTrains.filter(train => {
-                return allowedDestinations.includes(train.dest);
-            });
-
-            if (allTrains.length === 0) {
+            if (trains.length === 0) {
                 renderNoData(container);
                 return;
             }
 
-            container.innerHTML = allTrains.slice(0, 4).map(train => {
+            container.innerHTML = trains.slice(0, 4).map(train => {
                 const mins = parseInt(train.ttnt) || 0;
                 const timeClass = getTimeClass(mins);
                 const isRun = shouldRun(mins);
-                // Use full station name
-                const destCode = train.dest || 'Unknown';
-                const dest = getStationName(destCode);
-                const platform = train.plat ? `Platform ${train.plat}` : '';
+                const dest = getStationName(train.dest || 'Unknown');
+                const plat = train.plat ? `Platform ${train.plat}` : '';
 
                 return `
                     <div class="eta-item ${isRun ? 'run-alert' : ''}">
                         <div class="eta-info">
                             <div class="eta-destination">→ ${dest}</div>
-                            <div class="eta-platform">${platform}</div>
+                            <div class="eta-platform">${plat}</div>
                         </div>
                         <div class="eta-time">
                             <div class="eta-minutes-wrapper">
@@ -1230,22 +1018,15 @@
             }).join('');
         }
 
-        // Update timestamp
-        function updateTimestamp(elementId) {
+        function updateTimestamp(id) {
             const now = new Date();
-            const timeStr = now.toLocaleTimeString('en-HK', {
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
+            const time = now.toLocaleTimeString('en-HK', {
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
             });
-            const element = document.getElementById(elementId);
-            if (element) {
-                element.textContent = `Last updated: ${timeStr} 🦕`;
-            }
+            const el = document.getElementById(id);
+            if (el) el.textContent = `Last updated: ${time} 🦕`;
         }
 
-        // Main refresh function
         async function refreshData() {
             if (currentPage === 'work') {
                 await refreshWorkPage();
@@ -1254,99 +1035,63 @@
             }
         }
 
-        // Refresh Work Page
         async function refreshWorkPage() {
-            const busContainer = document.getElementById('work-bus-eta');
-            const mtrContainer = document.getElementById('work-mtr-eta');
+            const busEl = document.getElementById('work-bus-eta');
+            const mtrEl = document.getElementById('work-mtr-eta');
 
-            // Show loading
-            renderLoading(busContainer);
-            renderLoading(mtrContainer);
+            renderLoading(busEl);
+            renderLoading(mtrEl);
 
-            // Fetch Bus ETA from both KMB and Citybus
-            // For Go Work: From 日出康城領凱站 TO Wanchai
-            // Route 690S: 日出康城 → 灣仔 is "inbound" direction for this route
+            const kmbId = FIXED_STOPS.work.kmb;
+            const ctbId = FIXED_STOPS.work.ctb;
+
             try {
-                const stationPatterns = ['日出康城', '領凱', 'lohas', 'visionary'];
-
-                // Find stop IDs for both operators in parallel
-                // Using "inbound" for buses going from LOHAS Park to Wan Chai
-                const [kmbStopId, ctbStopId] = await Promise.all([
-                    findKMBStopId('690S', 'inbound', stationPatterns),
-                    findCTBStopId('690S', 'inbound', stationPatterns)
-                ]);
-
-                if (kmbStopId || ctbStopId) {
-                    const busData = await fetchCombinedBusETA(kmbStopId, ctbStopId, '690S');
-                    renderBusETA(busContainer, busData);
-                } else {
-                    renderError(busContainer, "Couldn't find bus stop");
-                }
-            } catch (error) {
-                renderError(busContainer);
+                const busData = await fetchCombinedBusETA(kmbId, ctbId, CONFIG.BUS_ROUTE);
+                renderBusETA(busEl, busData);
+            } catch (err) {
+                renderError(busEl);
             }
 
-            // Fetch MTR Schedule
             try {
                 const mtrData = await fetchMTRSchedule(CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_LHP);
-                renderMTRSchedule(mtrContainer, mtrData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_LHP);
-            } catch (error) {
-                renderError(mtrContainer);
+                renderMTRSchedule(mtrEl, mtrData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_LHP);
+            } catch (err) {
+                renderError(mtrEl);
             }
 
             updateTimestamp('work-updated');
         }
 
-        // Refresh Home Page
         async function refreshHomePage() {
-            const busContainer = document.getElementById('home-bus-eta');
-            const mtrTkoContainer = document.getElementById('home-mtr-tko-eta');
+            const busEl = document.getElementById('home-bus-eta');
+            const mtrEl = document.getElementById('home-mtr-tko-eta');
 
-            // Show loading
-            renderLoading(busContainer);
-            renderLoading(mtrTkoContainer);
+            renderLoading(busEl);
+            renderLoading(mtrEl);
 
-            // Fetch Bus ETA from both KMB and Citybus
-            // For Go Home: From 盧押道 TO LOHAS Park
-            // Route 690S: 灣仔 → 日出康城 is "outbound" direction for this route
+            const kmbId = FIXED_STOPS.home.kmb;
+            const ctbId = FIXED_STOPS.home.ctb;
+
             try {
-                const stationPatterns = ['盧押道', 'luard'];
-
-                // Find stop IDs for both operators in parallel
-                // Using "outbound" for buses going from Wan Chai to LOHAS Park
-                const [kmbStopId, ctbStopId] = await Promise.all([
-                    findKMBStopId('690S', 'outbound', stationPatterns),
-                    findCTBStopId('690S', 'outbound', stationPatterns)
-                ]);
-
-                if (kmbStopId || ctbStopId) {
-                    const busData = await fetchCombinedBusETA(kmbStopId, ctbStopId, '690S');
-                    renderBusETA(busContainer, busData);
-                } else {
-                    renderError(busContainer, "Couldn't find bus stop");
-                }
-            } catch (error) {
-                renderError(busContainer);
+                const busData = await fetchCombinedBusETA(kmbId, ctbId, CONFIG.BUS_ROUTE);
+                renderBusETA(busEl, busData);
+            } catch (err) {
+                renderError(busEl);
             }
 
-            // Fetch MTR Schedule for Tseung Kwan O (trains to LOHAS Park only)
             try {
-                const mtrTkoData = await fetchMTRSchedule(CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TKO);
-                // Filter for trains going to LOHAS Park only
-                renderMTRScheduleFiltered(mtrTkoContainer, mtrTkoData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TKO, ['LHP']);
-            } catch (error) {
-                renderError(mtrTkoContainer);
+                const mtrData = await fetchMTRSchedule(CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TKO);
+                renderMTRScheduleFiltered(mtrEl, mtrData, CONFIG.MTR_LINE_TKL, CONFIG.MTR_STATION_TKO, ['LHP']);
+            } catch (err) {
+                renderError(mtrEl);
             }
 
             updateTimestamp('home-updated');
         }
 
-        // Initial load
+        // Start
         refreshData();
-
-        // Auto-refresh every 30 seconds
         setInterval(refreshData, 30000);
     </script>
 </body>
 </html>
-
